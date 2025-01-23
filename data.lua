@@ -8,7 +8,13 @@ function MapGen_Hexalith()
     -- Nauvis-based generation
     local map_gen_setting = table.deepcopy(data.raw.planet.nauvis.map_gen_settings)
 
-    map_gen_setting.starting_area = 0
+    data:extend{
+        {
+          type = "noise-expression",
+          name = "hexalith_enemy_base_radius",
+          expression = "40"
+        }
+    }
 
     map_gen_setting.property_expression_names =
     {
@@ -27,6 +33,7 @@ function MapGen_Hexalith()
         ["decorative:green-carpet-grass:probability"] = "gleba_green_carpet_grass_probability",
         ["decorative:green-hairy-grass:probability"] = "gleba_green_hairy_grass_probability"
     }
+    map_gen_setting.property_expression_names.starting_area_radius = "hexalith_enemy_base_radius"
     map_gen_setting.property_expression_names.cliffiness = "cliffiness_basic"
     map_gen_setting.property_expression_names.cliff_elevation = "cliff_elevation_from_elevation"
     
@@ -39,13 +46,13 @@ function MapGen_Hexalith()
 
     map_gen_setting.autoplace_controls = {
         
-        ["enemy-base"] = { frequency = 10, size = 10, richness = 10},
+        ["enemy-base"] = { frequency = 40, size = 10, richness = 10},
         ["trees"] = { frequency = 0.5, size = 0.5, richness = 1 },
         ["rocks"] = { frequency = 2, size = 1, richness = 1},
         ["gleba_water"] = {frequency = 0.4, size = 0.5, richness = 0.5},
         ["water"] = { frequency = 1, size = 1, richness = 1 },
-        ["uranium-ore"] = { frequency = 2, size = 2, richness = 2},
-        ["nauvis_cliff"] = { frequency = 2, size = 1, richness = 1},
+        ["uranium-ore"] = { frequency = 20, size = 4, richness = 0.5},
+        ["nauvis_cliff"] = { frequency = 4, size = 1, richness = 1},
     }
 
     map_gen_setting.autoplace_settings["tile"] =
@@ -74,13 +81,6 @@ function MapGen_Hexalith()
             ["grass-3"] = {},
             ["grass-4"] = {},
             ["fulgoran-machinery"] = {},
-            ["wetland-blue-slime"] = {},
-            ["wetland-light-green-slime"] = {},
-            ["wetland-green-slime"] = {},
-            ["wetland-light-dead-skin"] = {},
-            ["wetland-dead-skin"] = {},
-            ["wetland-pink-tentacle"] = {},
-            ["wetland-red-tentacle"] = {},
             ["gleba-deep-lake"] = {},
             ["lowland-brown-blubber"] = {},
             ["lowland-olive-blubber"] = {},
@@ -276,8 +276,8 @@ hexalith.orbit = {
         type = "space-location",
         name = "star",
     },
-    distance = 20,
-    orientation = 0.35
+    distance = 17,
+    orientation = 0.42
 }
 
 local hexalith_connection = {
