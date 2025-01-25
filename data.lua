@@ -12,7 +12,7 @@ function MapGen_Hexalith()
         {
           type = "noise-expression",
           name = "hexalith_enemy_base_radius",
-          expression = "40"
+          expression = "120"
         }
     }
 
@@ -46,12 +46,12 @@ function MapGen_Hexalith()
 
     map_gen_setting.autoplace_controls = {
         
-        ["enemy-base"] = { frequency = 40, size = 10, richness = 10},
+        ["enemy-base"] = { frequency = 20, size = 7, richness = 7},
         ["trees"] = { frequency = 0.5, size = 0.5, richness = 1 },
         ["rocks"] = { frequency = 2, size = 1, richness = 1},
         ["gleba_water"] = {frequency = 0.4, size = 0.5, richness = 0.5},
         ["water"] = { frequency = 1, size = 1, richness = 1 },
-        ["uranium-ore"] = { frequency = 20, size = 4, richness = 0.5},
+        ["uranium-ore"] = { frequency = 25, size = 5, richness = 0.5},
         ["nauvis_cliff"] = { frequency = 4, size = 1, richness = 1},
     }
 
@@ -310,7 +310,7 @@ data:extend {{
         },
     },
     prerequisites = {
-        "space-science-pack",
+        "space-science-pack", "mech-armor",
     },
     unit = {
         count = 200,
