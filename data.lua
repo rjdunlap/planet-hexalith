@@ -310,7 +310,7 @@ data:extend {{
         },
     },
     prerequisites = {
-        "space-science-pack", "mech-armor",
+        "space-science-pack", "power-armor-mk2",
     },
     unit = {
         count = 200,
