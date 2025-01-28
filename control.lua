@@ -1,6 +1,4 @@
 script.on_init(function()
-    game.forces.player.set_surface_hidden(game.surfaces.nauvis, true)
-
     if game.surfaces["hexalith"] then
         game.forces["enemy"].set_evolution_factor(0.6, game.surfaces.hexalith)
     end
