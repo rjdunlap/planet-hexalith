@@ -257,6 +257,7 @@ local hexalith=
         ["pressure"] = nauvis.surface_properties["pressure"],
         ["magnetic-field"] = nauvis.surface_properties["magnetic-field"],
         ["day-night-cycle"] = nauvis.surface_properties["day-night-cycle"],
+        ["gravity"] = 12,
     },
     surface_render_parameters =
     {
@@ -298,7 +299,7 @@ data:extend{hexalith_connection}
 data:extend {{
     type = "technology",
     name = "planet-discovery-hexalith",
-    icons = util.technology_icon_constant_planet("__planet-hexalith__/graphics/planet-hexalith.png"),
+    icons = PlanetsLib.technology_icon_constant_planet("__planet-hexalith__/graphics/planet-hexalith.png", 512),
     icon_size = 512,
     essential = true,
     localised_description = {"space-location-description.hexalith"},

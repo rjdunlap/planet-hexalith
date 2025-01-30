@@ -1,14 +1,13 @@
 {
     "name": "planet-hexalith",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "title": "Planet Hexalith",
     "author": "rjdunlap",
     "factorio_version": "2.0",
     "dependencies": ["base >= 2.0.28",
       "space-age",
       "any-planet-start >= 1.1.7",
-      "PlanetsLib",
-      "atan-nuclear-science",
+      "PlanetsLib >= 1.1.38",
       "alien-biomes-graphics"
     ],
     "description": "This mod adds in a T3 bitter homeworld, Hexalith"
