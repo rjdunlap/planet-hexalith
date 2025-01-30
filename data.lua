@@ -252,6 +252,7 @@ local hexalith=
     starmap_icon = "__planet-hexalith__/graphics/planet-hexalith.png",
     starmap_icon_size = 512,
     magnitude = nauvis.magnitude,
+    subgroup = "planets",
     surface_properties = {
         ["solar-power"] = 100,
         ["pressure"] = nauvis.surface_properties["pressure"],
