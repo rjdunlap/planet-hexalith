@@ -1,4 +1,5 @@
 require("tiles")
+require("scrap")
 --data.lua
 local asteroid_util = require("__space-age__.prototypes.planet.asteroid-spawn-definitions")
 
@@ -52,6 +53,7 @@ function MapGen_Hexalith()
         ["gleba_water"] = {frequency = 0.4, size = 0.5, richness = 0.5},
         ["water"] = { frequency = 1, size = 1, richness = 1 },
         ["uranium-ore"] = { frequency = 25, size = 5, richness = 0.5},
+        ["hexalith-scrap"] = { frequency = 20, size = 4, richness = 1},
         ["nauvis_cliff"] = { frequency = 4, size = 1, richness = 1},
     }
 
@@ -212,6 +214,7 @@ function MapGen_Hexalith()
             ["fulgoran-ruin-small"] = { frequency = 2, size = 2, richness = 2},
             ["fish"] = {},
             ["uranium-ore"] = {},
+            ["hexalith-scrap"] = {},
         }
     }
 
@@ -325,6 +328,8 @@ data:extend {{
     },
     order = "ea[hexalith]",
 }}
+
+table.insert(data.raw.technology["planet-discovery-hexalith"].effects, {type = "unlock-recipe", recipe = "hexalith-scrap-recycling"})
 
 -- Any Planet Start is optional.
 if mods["any-planet-start"] then
