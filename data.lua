@@ -326,4 +326,7 @@ data:extend {{
     order = "ea[hexalith]",
 }}
 
-APS.add_planet{name = "hexalith", filename = "__planet-hexalith__/hexalith.lua", technology = "planet-discovery-hexalith"}
+-- Any Planet Start is optional.
+if mods["any-planet-start"] then
+    APS.add_planet{name = "hexalith", filename = "__planet-hexalith__/hexalith.lua", technology = "planet-discovery-hexalith"}
+end
